@@ -14,6 +14,8 @@ const PostTitle = styled.h3`
 `
 
 export default ({ data }) => {
+  console.log(data);
+  
   const { nodes } = data.allMarkdownRemark
 
   return (
@@ -21,6 +23,8 @@ export default ({ data }) => {
       <SEO title="Home" />
       <h1>Hi people</h1>
       <p>Welcome to your new Gatsby site.</p>
+
+      <p>{data.allMarkdownRemark.totalCount} Posts</p>
 
       {nodes.map(node => {
         const md = node.frontmatter
